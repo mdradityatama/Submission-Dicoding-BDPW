@@ -120,7 +120,7 @@ main aside .foto-profile {
   background-color: azure;
   overflow: hidden;
   margin: 10px 0;
-  background-image: url('/assets/profile.jpg');
+  background-image: url('profile.jpg');
   background-size: cover;
 }
 
