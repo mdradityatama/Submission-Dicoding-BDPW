@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+  --primary: #393e46;
+  --second: #00adb5;
+  --tertiary: #aad8d3;
+  --text: #eeeeee;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  background-color: var(--primary);
+  justify-content: space-around;
+  color: var(--second);
+  height: 50px;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-evenly;
+}
+
+nav ul li a {
+  color: var(--tertiary);
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+nav ul li a:hover {
+  color: var(--second);
+  transition: 1s;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  height: 20px;
+  justify-content: space-between;
+  align-self: flex-end;
+  margin-right: 40px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--second);
+  transition: all 0.5s;
+}
+
+.menu-toggle span:first-child {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:last-child {
+  transform-origin: 0 100%;
+}
+
+main {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px;
+}
+
+main .content {
+  background-color: var(--tertiary);
+  width: 200px;
+  flex-basis: 70%;
+  border-radius: 30px;
+  margin-right: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+main .content article {
+  margin-bottom: 10px;
+}
+
+main .content article p {
+  font-size: 14px;
+  line-height: 15px;
+}
+
+main aside {
+  background-color: var(--tertiary);
+  width: 200px;
+  flex-basis: 30%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+main aside .foto-profile {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: azure;
+  overflow: hidden;
+  margin: 10px 0;
+  background-image: url('/assets/profile.jpg');
+  background-size: cover;
+}
+
+main aside .bio {
+  text-align: center;
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+
+main aside .bio h5 {
+  margin-bottom: 5px;
+}
+
+
+footer {
+  background-color: var(--primary);
+  color: var(--text);
+  height: 100px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 40px dashed #fff;
+}
+
+/* Breakpoint */
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: 80px;
+  }
+
+  nav .logo {
+    padding: 10px 0;
+  }
+
+  main {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    background-color: var(--primary);
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    transition: 2s;
+    transform: translateX(100%);
+  }
+
+  .menu-toggle {
+    display: flex;
+    transition: 1s;
+  }
+
+  main {
+    width: 100%;
+    flex-direction: column-reverse;
+    box-sizing: border-box;
+  }
+
+  main .content {
+    width: 100%;
+  }
+
+  main aside {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
