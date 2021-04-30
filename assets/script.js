@@ -24,7 +24,7 @@ menuToggle.addEventListener("click", function() {
     }
 })
 
-fetch('/assets/data.json')
+fetch('assets/data.json')
 .then(ress => ress.json())
 .then(ressponse => ressponse.map(x => article(x)));
 
@@ -36,6 +36,6 @@ function article({title, description}) {
             ${description}
         </p>
     `
-    
+
     content.appendChild(article);
 }
